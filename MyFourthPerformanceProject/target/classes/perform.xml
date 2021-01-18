@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- Depedency Injection : Setter injection -->
+	<bean id="Vishal" class="com.sujata.producer.Singer">
+		<property name="songs">
+			<list>
+				<value>Song 1</value>
+				<value>Song 2</value>
+				<value>Song 3</value>
+				<value>Song 4</value>
+				<value>Song 3</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="Lavakumar" class="com.sujata.producer.Singer">
+		<constructor-arg name="songs">
+			<list>
+				<value>Song A</value>
+				<value>Song B</value>
+				<value>Song C</value>
+				<value>Song D</value>
+			</list>
+		</constructor-arg>
+	</bean>
+	<!-- Dependency Injection : Constructor Injection -->
+	<bean id="Poojitha" class="com.sujata.producer.Juggler" lazy-init="true">
+		<constructor-arg name="balls">
+			<set>
+				<value>5</value>
+				<value>4</value>
+				<value>6</value>
+				<value>2</value>
+			</set>
+		</constructor-arg>
+	</bean>
+
+	<bean id="Komal" class="com.sujata.producer.Juggler">
+		<property name="balls">
+			<set>
+				<value>3</value>
+				<value>6</value>
+				<value>3</value>
+				<value>8</value>
+			</set>
+		</property>
+	</bean>
+
+	<!-- When in map both key and value are of the type String we can make use 
+		of props as well as map too -->
+	<bean id="Amit" class="com.sujata.producer.Dancer">
+		<constructor-arg name="songsStyle">
+			<props>
+				<prop key="SongA">Style X</prop>
+				<prop key="SongB">Style Y</prop>
+				<prop key="SongC">Style Z</prop>
+				<prop key="SongA">Style A</prop>
+			</props>
+		</constructor-arg>
+	</bean>
+
+	<bean id="Mahesh" class="com.sujata.producer.Dancer">
+		<property name="songsStyle">
+			<props>
+				<prop key="SongA">Style X</prop>
+				<prop key="SongB">Style Y</prop>
+				<prop key="SongC">Style Z</prop>
+				<prop key="SongA">Style A</prop>
+			</props>
+		</property>
+	</bean>
+
+
+	<bean id="guit" class="com.sujata.producer.Guitar"></bean>
+	<bean id="drum" class="com.sujata.producer.Drum"></bean>
+	<bean id="tabla" class="com.sujata.producer.Tabla"></bean>
+
+	<bean id="Divya" class="com.sujata.producer.Instrumentalist">
+		<constructor-arg name="songsInstrument">
+			<map>
+				<entry key="SongX" value-ref="guit"></entry>
+				<entry key="SongY" value-ref="drum"></entry>
+				<entry key="SongZ" value-ref="guit"></entry>
+				<entry key="SongA" value-ref="tabla"></entry>
+			</map>
+		</constructor-arg>
+	</bean>
+
+	<bean id="Geetinder" class="com.sujata.producer.Instrumentalist">
+		<property name="songsInstrument">
+			<map>
+				<entry key="Song1" value-ref="drum"></entry>
+				<entry key="Song2" value-ref="tabla"></entry>
+				<entry key="Song3" value-ref="drum"></entry>
+				<entry key="Song4" value-ref="drum"></entry>
+			</map>
+		</property>
+	</bean>
+
+</beans>
