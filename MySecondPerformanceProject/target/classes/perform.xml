@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- Depedency Injection : Setter injection  -->
+<bean id="Vishal" class="com.sujata.producer.Singer" scope="prototype">
+	<property name="song" value="LALALALALA"></property>
+</bean>
+
+<!-- Dependency Injection : Constructor Injection -->
+<bean id="Poojitha" class="com.sujata.producer.Juggler" lazy-init="true">
+	<constructor-arg name="balls" value="6"></constructor-arg>
+</bean>
+
+<bean id="Amit" class="com.sujata.producer.Dancer" lazy-init="true"></bean>
+
+</beans>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- Depedency Injection : Setter injection  -->
+<bean id="Vishal" class="com.sujata.producer.Singer" scope="prototype">
+	<property name="song" value="LALALALALA"></property>
+</bean>
+
+<!-- Dependency Injection : Constructor Injection -->
+<bean id="Poojitha" class="com.sujata.producer.Juggler" lazy-init="true">
+	<constructor-arg name="balls" value="6"></constructor-arg>
+</bean>
+
+<bean id="Amit" class="com.sujata.producer.Dancer" lazy-init="true"></bean>
+
+<bean id="guit" class="com.sujata.producer.Guitar"></bean>
+<bean id="drum" class="com.sujata.producer.Drum"></bean>
+<bean id="tabla" class="com.sujata.producer.Tabla"></bean>
+
+<bean id="Divya" class="com.sujata.producer.Instrumentalist">
+	<constructor-arg name="instrument" ref="guit"></constructor-arg>
+</bean>
+
+<bean id="Geetinder" class="com.sujata.producer.Instrumentalist">
+	<property name="instrument" ref="tabla"></property>
+</bean>
+
+</beans>
