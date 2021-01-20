@@ -1,0 +1,15 @@
+1. add tomcat to workspace
+2.run tomcat to check if ports are free to be used by tomcat, if port is not free change the port of tomcat
+
+
+Application Creation
+1. Create Maven Project : webapp
+2. Attach tomcat to your project : from buildpath
+3. Add depedency : spring context, spring mvc, jstl
+4. /WEB-INF/web.xml : configure dispatcher servlet
+5. create configuration file for WebApplicationContext : /WEB-INF/dispatcherservletname-servlet.xml (BeanConfigurationFile)
+6. Class and annotate it with @Controller
+7. write controllers i.e pulic methods annotated with @RequestMapping
+8. create folder with the name views inside /WEB-INF
+9. create JSP inside views folder
+10. run application : Run on server
