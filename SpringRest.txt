@@ -1,0 +1,20 @@
+Rest API : HTTP Protocol 
+HTTP Methods : Get, Post, Put, Delete
+
+Get : Reading any data
+Post : inserting any data
+Put : modifying any data
+Delete : deleting data
+
+GET    : http://localhost:8085/employees
+GET    : http://localhost:8085/employees/[id}
+POST   : http://localhost:8085/employees
+PUT    : http://localhost:8085/employees/{id}/{salary}
+DELETE : http://localhost:8085/employees/{id}
+
+Noun : Plural Noun
+URI : wrt its HTTP method
+
+JAXB (Java API for XML Binding) : used to marshal java objects and unmarshal as well
+Marshalling means : converting Java objects in XML format
+Unmarshelling means Converting XML back to Java Objects
