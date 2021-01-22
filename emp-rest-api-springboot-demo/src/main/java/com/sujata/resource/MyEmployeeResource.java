@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.sujata.bean.Employee;
+import com.sujata.bean.Employees;
 import com.sujata.dao.EmployeeDao;
 import com.sujata.service.EmployeeService;
 
@@ -23,14 +24,14 @@ public class MyEmployeeResource {
 	@Autowired
 	EmployeeService empService;
 	
-	@GetMapping(path="/{id}",produces="application/xml")
+	@GetMapping(path="/{id}")
 	public Employee getEmployeeByIdResource(@PathVariable("id")int id){
 		return empService.getEmployeeById(id);
 	}
 	
 	@GetMapping
-	public List<Employee> getAllEmployees(){
-		return empService.getAllEmployees();
+	public Employees getAllEmployees(){
+		return new Employees(empService.getAllEmployees());
 	}
 	
 	@PostMapping(consumes="application/json")
